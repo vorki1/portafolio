@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>(responsivo)proyectos (nombre,imagen, descripcion, destacable, tecnologia usada, enlace github). contacto. footer: redes sociales</p>
+    <p>(responsivo)contacto. footer: redes sociales</p>
     <hr/>
     <h2 class="text-h2">Javier Ignacio Saldaño Hernández</h2>
     <div class="caja-texto">
@@ -13,36 +13,50 @@
   <v-btn class="boton-home">Descargar CV</v-btn>
   <v-btn class="boton-home">Contacto</v-btn>
   <hr/>
+  <router-link to="aboutMe">
+    <v-btn>Sobre mi</v-btn>
+  </router-link>
+  <hr/>
   <StackTecnologico />
   <hr/>
-  <ProyectosRealizados 
-  titulo="Titulo del proyecto"
-  rol="desarrollador backend"
-  texto="Ejemplo de descripcion "
-  destacado="Texto destacado del proyecto y tecnologias usadas"
-  :images="images"/>
-  <ProyectosRealizados 
-  titulo="Tienda de videojuegos"
-  arquitectura="Monolitica"
-  rol="Diseñador y Desarrollador Backend y Frontend"
-  texto="Tienda online de codigos de videojuegos como steam, epic games, etc.
-  Existe usuario administrador y usuario cliente.
-  El usuario cliente puede ver los productos, agregar al carrito, realizar la compra y valorar.
-  El administrador puede agregar, eliminar y editar productos."
-  destacado="Bases de datos mongoDB para los usuarios, Redis para mejorar el rendimiento del carrito e imagekit para almacenamiento de imagenes.
-  Capaz de importar y exportar arcvhivos excel."
-  :images="imagesTiendaJuegos"/>
+  <div v-for="(proyecto, index) in proyectos" :key="index">
+      <ProyectosRealizados
+        :titulo="proyecto.titulo"
+        :rol="proyecto.rol"
+        :texto="proyecto.texto"
+        :destacado="proyecto.destacado"
+        :images="proyecto.images"
+        :arquitectura="proyecto.arquitectura"
+      />
+  </div>
+  <hr/>
+  <h1>Contacto</h1>
+
+  <p class="text-body-1">
+    ¿Tienes una propuesta, oferta laboral o simplemente quieres hablar sobre tecnología? 
+    ¡No dudes en contactarme!
+  </p>
+
+  <ul>
+    <li>Email: javier.saldano.hernandez@gmail.com</li>
+    <li>Teléfono: +56 9 3700 1905</li>
+  </ul>
+
+  <div>
+    <v-btn icon href="https://www.linkedin.com/in/javier-salda%C3%B1o-hern%C3%A1ndez-b77b52232/" target="_blank">
+      <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
+    </v-btn>
+    <v-btn icon href="https://github.com/vorki1" target="_blank">
+      <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/github.png" alt="linkedin"/>
+    </v-btn>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import StackTecnologico from '../components/StackTecnologico.vue';
 import ProyectosRealizados from '../components/ProyectosRealizados.vue';
-//imagenes
-import carritoTienda from '@/assets/proyectos/bdnsql-tienda-juegos/carrito-tienda-juegos.png';
-import home from '@/assets/proyectos/bdnsql-tienda-juegos/home-tienda-juegos.png';
-import producto from '@/assets/proyectos/bdnsql-tienda-juegos/producto-tienda-juegos.png';
-import panelAdmin from '@/assets/proyectos/bdnsql-tienda-juegos/panel-admin-tienda-juegos.png';
+import { proyectos } from '../proyectos-data';
 
 export default defineComponent ({
   name: 'HomePage',
@@ -52,18 +66,7 @@ export default defineComponent ({
   },
   data() {
     return {
-      images: [
-        'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-      ],
-      imagesTiendaJuegos:[
-        home,
-        producto,
-        carritoTienda,
-        panelAdmin
-      ]
+      proyectos,
     };
   },
 })
