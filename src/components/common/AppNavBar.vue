@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app id="app-navbar">
+  <v-app-bar class="app-navbar" app>
     <v-toolbar-title>Mi Portafolio</v-toolbar-title>
     <v-spacer></v-spacer> 
     <v-btn text to="/" class="boton-nav">Inicio</v-btn> 
@@ -17,13 +17,19 @@ export default defineComponent({
 </script>
 
 <style scoped>
-#app-navbar {
-  color: #fff;
-  background-color: rgba(218, 165, 32, 1);
+.app-navbar {
+  background-color: rgba(218, 165, 32, 1) !important;
+  color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px); /* Opcional: para que se vea suave si hay contenido detrás */
+  box-shadow: none !important; /* Elimina elevación si estorba */
 }
+.app-navbar::before {
+  background-color: transparent !important;
+}
+
 .boton-nav{
   color: rgba(255, 255, 255, 1); 
-  background-color: rgba(0, 0, 0, 1); 
+  background-color: rgba(34, 34, 34, 1);  
   transition-duration: 0.5s;
   cursor:pointer;
   

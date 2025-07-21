@@ -13,22 +13,26 @@
   <v-btn class="boton-home">Descargar CV</v-btn>
   <v-btn class="boton-home">Contacto</v-btn>
   <hr/>
+  <h1>Experiencia</h1>
+  <hr/>
+  <div v-for="(proyecto, index) in proyectos" :key="index">
+    <ProyectosRealizados
+    :titulo="proyecto.titulo"
+    :rol="proyecto.rol"
+    :texto="proyecto.texto"
+    :destacado="proyecto.destacado"
+    :images="proyecto.images"
+    :arquitectura="proyecto.arquitectura"
+    />
+  </div>
+  <hr/>
+  <StackTecnologico />
+  <hr/>
   <router-link to="aboutMe">
     <v-btn>Sobre mi</v-btn>
   </router-link>
   <hr/>
-  <StackTecnologico />
-  <hr/>
-  <div v-for="(proyecto, index) in proyectos" :key="index">
-      <ProyectosRealizados
-        :titulo="proyecto.titulo"
-        :rol="proyecto.rol"
-        :texto="proyecto.texto"
-        :destacado="proyecto.destacado"
-        :images="proyecto.images"
-        :arquitectura="proyecto.arquitectura"
-      />
-  </div>
+  certificados
   <hr/>
   <h1>Contacto</h1>
 
@@ -85,7 +89,7 @@ export default defineComponent ({
   height: 40px;
   width: 150px;
   color: #fff;
-  background-color: rgba(218, 165, 32, 1);
+  background-color: rgba(218, 165, 32, 1)
 }
 </style>
 

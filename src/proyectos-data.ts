@@ -57,11 +57,9 @@ export const proyectos: Proyecto[] = [
     titulo: 'Tienda de videojuegos',
     arquitectura: 'Monolitica',
     rol: 'Diseñador y Desarrollador Backend y Frontend',
-    texto: `Tienda online de codigos de videojuegos como steam, epic games, etc.
-    Existe usuario administrador y usuario cliente.
-    El usuario cliente puede ver los productos, agregar al carrito, realizar la compra y valorar.
-    El administrador puede agregar, eliminar y editar productos.`,
-    destacado: `Bases de datos mongoDB para los usuarios, Redis para mejorar el rendimiento del carrito e imagekit para almacenamiento de imagenes.
+    texto: `(Que es)Tienda online de codigos de videojuegos como steam, epic games, etc enfocado en la automatizacion de compra de videojuegos.
+    (para que es o que permite)ademas que permite al administrador añadir, editar y eliminar productos mediante la importacion y exportacion de excel.`,
+    destacado: `(algo destacable del sistema)Bases de datos mongoDB para los usuarios, Redis para mejorar el rendimiento del carrito e imagekit para almacenamiento de imagenes.
     Capaz de importar y exportar arcvhivos excel.`,
     images: [home, producto, carritoTienda, panelAdmin]
     },

@@ -32,7 +32,7 @@ export default defineComponent({
   text-align: center;
   color: rgba(255, 255, 255, 1);  
   margin-top: 60px;
-  background-color: rgba(128, 128, 128, 1);   
+  background-color: rgba(34, 34, 34, 1);   
   min-height: 100vh;
 }
 
