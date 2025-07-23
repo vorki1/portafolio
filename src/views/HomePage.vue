@@ -34,32 +34,19 @@
   <hr/>
   certificados
   <hr/>
-  <h1>Contacto</h1>
-
-  <p class="text-body-1">
-    ¿Tienes una propuesta, oferta laboral o simplemente quieres hablar sobre tecnología? 
+  <p class="text-of-atention">
+    ¿Tienes una propuesta, oferta laboral o necesitas una consultoría sobre tecnología? 
     ¡No dudes en contactarme!
   </p>
-
-  <ul>
-    <li>Email: javier.saldano.hernandez@gmail.com</li>
-    <li>Teléfono: +56 9 3700 1905</li>
-  </ul>
-
-  <div>
-    <v-btn icon href="https://www.linkedin.com/in/javier-salda%C3%B1o-hern%C3%A1ndez-b77b52232/" target="_blank">
-      <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
-    </v-btn>
-    <v-btn icon href="https://github.com/vorki1" target="_blank">
-      <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/github.png" alt="linkedin"/>
-    </v-btn>
-  </div>
+  <ContactoPersonal />
+  <p>Barra al final indicando la finalizacion como un navBar</p>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import StackTecnologico from '../components/StackTecnologico.vue';
 import ProyectosRealizados from '../components/ProyectosRealizados.vue';
+import ContactoPersonal from '../components/ContactoPersonal.vue';
 import { proyectos } from '../proyectos-data';
 
 export default defineComponent ({
@@ -67,6 +54,7 @@ export default defineComponent ({
   components: {
     StackTecnologico,
     ProyectosRealizados,
+    ContactoPersonal,
   },
   data() {
     return {
@@ -90,6 +78,14 @@ export default defineComponent ({
   width: 150px;
   color: #fff;
   background-color: rgba(218, 165, 32, 1)
+}
+
+.text-of-atention {
+  margin: 60px;
+  text-align: center;
+  font-size: 1.4em;
+  box-shadow: 0 2px 8px rgba(255, 221, 102, 1);
+  border-radius: 10px;
 }
 </style>
 

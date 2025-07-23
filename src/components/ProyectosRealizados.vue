@@ -21,8 +21,8 @@
       <v-col cols="12" md="7">
         <v-carousel
           height="400"
-          show-arrows="hover"
           hide-delimiter-background
+          :show-arrows="false"
         >
           <v-carousel-item
             v-for="(image, i) in images"
@@ -113,5 +113,9 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+}
+::v-deep(.v-carousel__controls .v-btn) {
+  color: rgba(218, 165, 32, 1) !important;
+  background-color: rgba(34, 34, 34, 1) !important;
 }
 </style>
