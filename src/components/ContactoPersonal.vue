@@ -2,9 +2,33 @@
     <v-row class="container-contact align-center">
         <v-col cols="12" md="5" class="text-sombreado">
             <h2 class="text-h5 mb-4">Contáctame</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus adipisci reiciendis, quia consequuntur dignissimos mollitia possimus, fugiat corporis quasi reprehenderit ad aliquid officia voluptate optio tempora magnam. Doloremque, maiores numquam!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus adipisci reiciendis, quia consequuntur dignissimos mollitia possimus, fugiat corporis quasi reprehenderit ad aliquid officia voluptate optio tempora magnam. Doloremque, maiores numquam!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus adipisci reiciendis, quia consequuntur dignissimos mollitia possimus, fugiat corporis quasi reprehenderit ad aliquid officia voluptate optio tempora magnam. Doloremque, maiores numquam!</p>
+            <div style="margin-bottom: 20px;">
+                <v-text-field 
+                label="Nombre"
+                variant="underlined"
+                placeholder="Ingresa tu nombre"
+                type="text"
+                v-model="nombre"
+                />
+                <v-text-field 
+                label="E-mail"
+                variant="underlined"
+                placeholder="Ingresa tu correo electrónico"
+                type="E-mail"
+                v-model="email"
+                :rules="emailRules"
+                />
+            </div>
+            <v-textarea label="Escribe tu mensaje aqui"
+            variant="outlined"
+            type="text"
+            v-model="mensaje"
+            />
+            <v-btn
+            @click="enviarFormulario"
+            >
+                Send
+            </v-btn>
         </v-col>
         <v-col cols="12" md="7">
             <p class="text-h5 text-destacado espaciado">Ingeniero Civil En Computación E Informática</p>
@@ -35,6 +59,33 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'ContactoPersonal',
+    data() {
+        return {
+            nombre: '',
+            email: '',
+            mensaje: '',
+            emailRules: [
+                (v: string) => !!v || 'E-mail es requerido',
+                (v: string) => /.+@.+\..+/.test(v) || 'E-mail debe ser válido',
+            ],
+        };
+    },
+    methods: {
+        enviarFormulario() {
+            // Aquí puedes manejar el envío del formulario
+            if (!this.nombre || !this.email || !this.mensaje) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+            const emailValido = this.emailRules.every(rule => rule(this.email) === true);
+            if (!emailValido) {
+            alert('Por favor, ingresa un correo electrónico válido.');
+            return;
+            }
+            //Aqui se realiza la logica de envio del formulario
+            console.log('Formulario enviado:', this.nombre, this.email, this.mensaje);
+        },
+    },
 });
 </script>
 
@@ -49,7 +100,7 @@ export default defineComponent({
     box-shadow: 0 4px 8px rgba(218, 165, 32, 0.8);
 }
 .espaciado {
-    margin: 20px;
+    margin: 35px;
 }
 .style-icons{
     background-color: rgba(34, 34, 34, 1);

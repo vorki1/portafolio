@@ -1,20 +1,19 @@
 <template>
   <div>
-    <p>(responsivo)contacto. footer: redes sociales</p>
-    <hr/>
-    <h2 class="text-h2">Javier Ignacio Saldaño Hernández</h2>
-    <div class="caja-texto">
-      <p class="text-body-1">
-        Desarrollador de soluciones para responder 
-        a necesidades utilizando las tecnologias
-      </p>
-    </div>
+    <p class="text-h4" style="color: rgba(218, 165, 32, 1)">Ingeniero civil en computación e informática</p>
+    <p class="text-h2">Javier Ignacio Saldaño Hernández</p>
+    <p class="text-body-1 caja-texto">
+      Diseñador y desarrollador de soluciones tecnologicas innovadoras,
+      adaptadas a sus necesidades.
+    </p>
   </div>
   <v-btn class="boton-home">Descargar CV</v-btn>
-  <v-btn class="boton-home">Contacto</v-btn>
-  <hr/>
-  <h1>Experiencia</h1>
-  <hr/>
+  <hr class="division"/>
+  <p class="text-title">Experiencia</p>
+  <hr class="division"/>
+  <br id="proyectos">
+  <br>
+  <p class="text-title" >Proyectos</p>
   <div v-for="(proyecto, index) in proyectos" :key="index">
     <ProyectosRealizados
     :titulo="proyecto.titulo"
@@ -25,21 +24,22 @@
     :arquitectura="proyecto.arquitectura"
     />
   </div>
-  <hr/>
+  <hr class="division"/>
+  <p class="text-title">Stack tecnologico</p>
   <StackTecnologico />
-  <hr/>
+  <hr class="division"/>
   <router-link to="aboutMe">
     <v-btn>Sobre mi</v-btn>
   </router-link>
-  <hr/>
-  certificados
-  <hr/>
+  <hr class="division"/>
+  <p class="text-title">certificados</p>
+  <hr class="division"/>
   <p class="text-of-atention">
-    ¿Tienes una propuesta, oferta laboral o necesitas una consultoría sobre tecnología? 
+    ¿Tienes una propuesta, oferta laboral o necesitas una consultoría sobre tecnología?<br> 
     ¡No dudes en contactarme!
   </p>
   <ContactoPersonal />
-  <p>Barra al final indicando la finalizacion como un navBar</p>
+
 </template>
 
 <script lang="ts">
@@ -66,11 +66,11 @@ export default defineComponent ({
 
 <style scoped>
 .caja-texto {
-  max-width: 400px;
+  max-width: 450px;
   margin: 24px auto;
   padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(14, 14, 14, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(255, 221, 102, 1);
 }
 .boton-home{
   margin: 10px;
@@ -87,5 +87,20 @@ export default defineComponent ({
   box-shadow: 0 2px 8px rgba(255, 221, 102, 1);
   border-radius: 10px;
 }
+
+.text-title{
+  font-size: 3em;
+  text-align: center;
+  margin: 20px;
+  color: rgba(218, 165, 32, 1);
+}
+.division{
+  border: none;
+  height: 3px;
+  background: rgba(0, 0, 0, 1);
+  margin: 24px 0;
+  width: 100%;
+}
+
 </style>
 

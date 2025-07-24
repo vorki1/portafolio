@@ -1,5 +1,4 @@
 <template>
-  <h1>Stack tecnologico</h1>
   <div class="stack-container">
     <div class="stacks-box">
       <h3>Lenguajes de programación</h3>

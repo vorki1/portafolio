@@ -1,6 +1,6 @@
 //Diseño y estructura general de la "casa"
 <template>
-  <v-app >
+  <v-app style="background-color: rgba(34, 34, 34, 1); " id="inicio">
     <!-- El Navbar es un elemento persistente dentro de mi appGlobal, no importa que pagina vea el usuario -->
     <AppNavbar/><!-- Contiene la navegacion -->
     <v-main class="app-global">
@@ -9,6 +9,11 @@
         <router-view /> <!-- Aqui se inyecta el componente que se va a mostrar en la vista dependiendo de la ruta -->
       </v-container>
     </v-main>
+      <footer class="footer-bar">
+        <div class="footer-content">
+          <span>© 2025 Javier Ignacio Saldaño Hernández</span>
+        </div>
+      </footer>
   </v-app>
 </template>
 
@@ -34,6 +39,21 @@ export default defineComponent({
   margin-top: 60px;
   background-color: rgba(34, 34, 34, 1);   
   min-height: 100vh;
+}
+.footer-bar {
+  width: 100%;
+  background: rgba(0, 0, 0, 1); 
+  color: rgba(218, 165, 32, 0.8);
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 </style>
