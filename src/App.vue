@@ -11,7 +11,7 @@
     </v-main>
       <footer class="footer-bar">
         <div class="footer-content">
-          <span>© 2025 Javier Ignacio Saldaño Hernández</span>
+          <span>© 2025 Diseñador y desarrollador de software</span>
         </div>
       </footer>
   </v-app>
@@ -36,7 +36,7 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: rgba(255, 255, 255, 1);  
-  margin-top: 60px;
+  margin-top: 20px;
   background-color: rgba(34, 34, 34, 1);   
   min-height: 100vh;
 }

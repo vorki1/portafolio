@@ -25,9 +25,10 @@
             v-model="mensaje"
             />
             <v-btn
+            class="boton-send"
             @click="enviarFormulario"
             >
-                Send
+                Enviar
             </v-btn>
         </v-col>
         <v-col cols="12" md="7">
@@ -105,6 +106,12 @@ export default defineComponent({
 .style-icons{
     background-color: rgba(34, 34, 34, 1);
     margin: 10px;
-    
+}
+.boton-send{
+    height: 40px;
+    width: 150px;
+    color: #fff;
+    background-color: rgba(218, 165, 32, 1);
+    border-radius: 100px;
 }
 </style>
