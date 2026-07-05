@@ -1,0 +1,41 @@
+/* =========================
+   SCROLLBAR GLOBAL
+========================= */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Fondo de la barra */
+::-webkit-scrollbar-track {
+  background: rgba(20, 20, 20, 1);
+  border-radius: 10px;
+}
+
+/* Thumb (la parte que se mueve) */
+::-webkit-scrollbar-thumb {
+  background: rgba(218, 165, 32, 0.7);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+}
+
+/* Hover del thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.9);
+}
+
+/* Corner (cuando hay scroll horizontal + vertical) */
+::-webkit-scrollbar-corner {
+  background: rgba(20, 20, 20, 1);
+}
+
+/* =========================
+   FIREFOX (limitado)
+========================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(218, 165, 32, 0.8) rgba(20, 20, 20, 1);
+}

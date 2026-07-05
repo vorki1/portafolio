@@ -6,6 +6,7 @@ import { createVuetify } from 'vuetify' //Importa la función para crear una ins
 import * as components from 'vuetify/components' //Importa los componentes de Vuetify
 import * as directives from 'vuetify/directives' //Importa las directivas de Vuetify
 import '@mdi/font/css/materialdesignicons.css'
+import '@/assets/styles/scrollbar.css'
 
 const vuetify = createVuetify({ //Crea una instancia de Vuetify con los componentes y directivas que se van a usar
   components,

@@ -30,6 +30,8 @@ export default defineComponent({
 </script>
 
 <style>
+/* ... todo tu CSS actual de arriba ... */
+
 .app-global {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -40,6 +42,7 @@ export default defineComponent({
   background-color: rgba(34, 34, 34, 1);   
   min-height: 100vh;
 }
+
 .footer-bar {
   width: 100%;
   background: rgba(0, 0, 0, 1); 
@@ -56,4 +59,18 @@ export default defineComponent({
   gap: 16px;
 }
 
+/* ======================================================== */
+/* 👇 AQUÍ PUEDES PONER LOS ESTILOS GLOBALES PARA CELULARES */
+/* ======================================================== */
+@media (max-width: 600px) {
+  .app-global {
+    margin-top: 10px; /* Reduce el margen superior en celulares */
+  }
+  .footer-content {
+    gap: 8px; /* Reduce el espacio entre elementos del footer */
+  }
+  .footer-bar {
+    font-size: 0.8rem; /* Reduce el tamaño del texto del footer */
+  }
+}
 </style>
