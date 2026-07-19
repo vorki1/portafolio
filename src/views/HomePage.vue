@@ -125,7 +125,7 @@
     <hr class="division"/>
 
     <p class="text-of-atention">
-      ¿Tienes una propuesta, oferta laboral o necesitas una consultoría sobre tecnología?
+      ¿Tienes una propuesta, idea o necesitas una consultoría sobre tecnología?
       <br>
       ¡No dudes en contactarme!
     </p>

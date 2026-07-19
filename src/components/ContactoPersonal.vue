@@ -19,7 +19,7 @@
                 />
             </div>
             <v-textarea 
-                label="Escribe tu mensaje aqui"
+                label="Dejame tu contacto y mensaje aquí"
                 variant="outlined"
                 type="text"
                 v-model="mensaje"

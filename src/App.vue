@@ -11,7 +11,7 @@
     </v-main>
       <footer class="footer-bar">
         <div class="footer-content">
-          <span>© 2025 Diseñador y desarrollador de software</span>
+          <span>Diseñador y Desarrollador de Soluciones Tecnológicas</span>
         </div>
       </footer>
   </v-app>

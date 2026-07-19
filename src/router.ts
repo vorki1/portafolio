@@ -1,16 +1,39 @@
 // src/router/index.ts
-import { createRouter, createWebHashHistory } from 'vue-router'
 
-// Importa tus páginas
+import {
+  createRouter,
+  createWebHistory,
+} from 'vue-router'
+
 import HomePage from './views/HomePage.vue'
 
-const routes = [//Asocia el componente a la ruta
-  { path: '/', component: HomePage },
+const routes = [
+  {
+    path: '/',
+    component: HomePage,
+  },
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes
+  /*
+    process.env.BASE_URL obtiene automáticamente
+    el publicPath definido en vue.config.js.
+
+    Desarrollo:
+    /
+
+    Producción:
+    /portafolio/
+  */
+  history: createWebHistory(process.env.BASE_URL),
+
+  routes,
+
+  scrollBehavior() {
+    return {
+      top: 0,
+    }
+  },
 })
 
 export default router
